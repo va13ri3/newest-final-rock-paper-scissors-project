@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" contenrst="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+   
+    <title>Project: Rock, Paper, Scissors</title>
+</head>
+<body>
+ 
+    <!-- <div class="loader" id="loader">
+      <span class="ani">L</span>
+      <span class="ani">o</span>
+      <span class="ani">a</span>
+      <span class="ani">d</span>
+      <span class="ani">i</span>
+      <span class="ani">n</span>
+      <span class="ani">g</span>
+</div> -->
+    <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+
+  <div class="container">
+    <div class="card">
+      <div class="row">
+        <div class="col">
+            <h1 class="press-start-2p-regular">You</h1>
+            <img src="img/noun-hand-right-scissors-590105 (1).png" class="img-fluid animate__lightSpeedInRight" alt="...">
+            <img src="img/noun-hand-right-paper-590098 (1).png" class="img-fluid" alt="...">
+            <img src="img/noun-hand-right-rock-580863 (1).png" class="img-fluid" alt="...">
+        </div>
+        <div class="col">
+            <div class="card1">
+              <div class="score-container">
+  <div class="score-card">
+    <div class="team-label">You</div>
+    <div class="score-value" id="playerScore">--</div>
+  </div>
+
+
+       <button class="holographic-card" id="reset">New Game</button>
+       <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Instructions
+</button>
+
+<div id="outcome"></div>
+<div id="result"></div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">🪨 📄 ✂️ Rock Paper Scissors</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Game Rules</h6>
+        <ul class="list-unstyled">
+          <li>👊 <strong>Rock</strong> beats Scissors</li>
+          <li>✋ <strong>Paper</strong> beats Rock</li>
+          <li>✌️ <strong>Scissors</strong> beats Paper</li>
+          <li>🤝 Identical choices result in a tie.</li>
+        </ul>
+        <hr>
+        <h6>Scoring</h6>
+        <p>Win a round to get <strong>1 point</strong>. Ties and losses do not add points to your score.</p>
+        <hr>
+        <h6>Resetting</h6>
+        <p>Click the <strong>"New Game"</strong> button at any time to clear the scores and start over.</p>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+
+
+
+  <div class="score-card">
+    <div class="team-label">Comp</div>
+    <div class="score-value" id="computerScore">--</div>
+  </div>
+</div>
+
+
+          </div>
+        </div>
+            <div class="col">
+              <h1 class="press-start-2p-regular">Computer</h1>
+                <img src="img/noun-hand-left-scissors-590079 (2).png" class="img-fluid" alt="...">
+                <img src="img/noun-hand-left-paper-590073 (2).png" class="img-fluid" alt="...">
+                <img src="img/noun-hand-left-rock-580851 (1).png" class="img-fluid" alt="...">
+            </div>  
+      </div>
+     
+     
+                   
+        <div class="row">
+            <div class="col">
+                <div class="comic-brutal-button-container">
+  <button class="comic-brutal-button">
+    <div class="button-inner">
+      <div id="rock" class="button-text">ROCK!</div>
+      <div class="halftone-overlay"></div>
+      <div class="ink-splatter"></div>
+    </div>
+    <div class="button-shadow"></div>
+    <div class="button-frame"></div>
+  </button>
+</div>
+
+
+
+
+            </div>
+            <div class="col">
+                <div class="comic-brutal-button-container">
+  <button class="comic-brutal-button">
+    <div class="button-inner">
+      <div id="paper"class="button-text">PAPER!</div>
+      <div class="halftone-overlay"></div>
+      <div class="ink-splatter"></div>
+    </div>
+    <div class="button-shadow"></div>
+    <div class="button-frame"></div>
+  </button>
+</div>
+
+
+
+
+            </div>
+            <div class="col">
+                <div class="comic-brutal-button-container">
+  <button class="comic-brutal-button">
+    <div class="button-inner">
+      <div id="scissors" class="button-text">SCISSORS!</div>
+      <div class="halftone-overlay"></div>
+      <div class="ink-splatter"></div>
+    </div>
+    <div class="button-shadow"></div>
+    <div class="button-frame"></div>
+  </button>
+</div>
+
+
+
+
+            </div>
+        </div>
+          </div>
+        </div>
+
+
+
+
+   
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
