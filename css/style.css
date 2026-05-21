@@ -713,7 +713,14 @@ h1 {
 }
 
 
-
+.put {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-size: 1.2em;
+  color: #333;
+  text-align: center;
+  /* margin-top: 20px; */
+}
 
 /* Centered container for the tracker */
 .score-container {

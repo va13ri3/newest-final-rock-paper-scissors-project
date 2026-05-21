@@ -25,6 +25,8 @@ document.querySelector("#scissors").addEventListener("click", function () {
     document.querySelector("#playerPaper").style.display = "none";
 });
 
+
+
 document.querySelector("#reset").addEventListener("click", resetGame);
 
 
@@ -35,11 +37,14 @@ function playRound(playerChoice) {
 
     updateScore(result);
     displayResult(playerChoice, computerChoice, result);
+    
 }
+
 
 function getComputerChoice() {
     const index = Math.floor(Math.random() * choices.length);
     return choices[index];
+    
     // if statements: choices[index] === "Rock" display rock image, etc...
 }
 
@@ -71,7 +76,15 @@ function updateScore(result) {
    
 }
 
+if (computerChoice === "Rock") {
+    document.querySelector("#computerRock").style.display = "block";
+    document.querySelector("#computerPaper").style.display = "none";
+    document.querySelector("#computerScissors").style.display = "none";
+}
+
+
 function displayResult(playerChoice, computerChoice, result) {
+
     let resultText = " ";    
     if (result === "player") {
         resultText = "You win!";
@@ -86,6 +99,22 @@ function displayResult(playerChoice, computerChoice, result) {
         document.querySelector("#result").textContent = resultText;
         document.querySelector("#playerScore").textContent = playerScore;
         document.querySelector("#computerScore").textContent = computerScore;
+    
+
+
+            if (computerChoice === "Rock") {
+    document.querySelector("#computerRock").style.display = "block";
+    document.querySelector("#computerPaper").style.display = "none";
+    document.querySelector("#computerScissors").style.display = "none";
+} else if (computerChoice === "Paper") {
+    document.querySelector("#computerPaper").style.display = "block";
+    document.querySelector("#computerRock").style.display = "none";
+    document.querySelector("#computerScissors").style.display = "none";
+} else if (computerChoice === "Scissors") {
+    document.querySelector("#computerScissors").style.display = "block";
+    document.querySelector("#computerRock").style.display = "none";
+    document.querySelector("#computerPaper").style.display = "none";
+}
 }
 
 
@@ -93,7 +122,10 @@ function resetGame() {
     playerScore = 0;
     computerScore = 0;
     ties = 0;
-   
+
+    document.querySelector("#playerPaper").style.display = "none";
+    document.querySelector("#playerRock").style.display = "none";
+    document.querySelector("#playerScissors").style.display = "none";
     document.querySelector("#playerScore").textContent = playerScore;
     document.querySelector("#computerScore").textContent = computerScore;
     document.querySelector("#outcome").textContent = '';
