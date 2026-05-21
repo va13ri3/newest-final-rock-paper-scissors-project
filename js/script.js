@@ -6,14 +6,23 @@ const choices = ["Rock", "Paper", "Scissors"];
 
 document.querySelector("#rock").addEventListener("click", function () {
     playRound("Rock");
+    document.querySelector("#playerRock").style.display = "block";
+    document.querySelector("#playerPaper").style.display = "none";
+    document.querySelector("#playerScissors").style.display = "none";
 });
 
 document.querySelector("#paper").addEventListener("click", function () {
     playRound("Paper");
+    document.querySelector("#playerPaper").style.display = "block";
+    document.querySelector("#playerRock").style.display = "none";
+    document.querySelector("#playerScissors").style.display = "none";
 });
 
 document.querySelector("#scissors").addEventListener("click", function () {
     playRound("Scissors");
+    document.querySelector("#playerScissors").style.display = "block";
+    document.querySelector("#playerRock").style.display = "none";
+    document.querySelector("#playerPaper").style.display = "none";
 });
 
 document.querySelector("#reset").addEventListener("click", resetGame);
@@ -31,6 +40,7 @@ function playRound(playerChoice) {
 function getComputerChoice() {
     const index = Math.floor(Math.random() * choices.length);
     return choices[index];
+    // if statements: choices[index] === "Rock" display rock image, etc...
 }
 
 function determineWinner(player, computer) {
